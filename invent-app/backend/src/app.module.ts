@@ -7,22 +7,27 @@ import { LogisticsCompaniesModule } from './logistics-companies/logistics-compan
 import { ItemsModule } from './items/items.module';
 import { AuthModule } from './auth/auth.module';
 import { PackageTypeModule } from './package-type/package-type.module';
+import { ConfigModule } from '@nestjs/config';
 
 
 
 @Module({
   imports: [
-    UsersModule, 
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
+
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'localhost',
-      port: 3307,
-      username: 'user',
-      password: 'root',
-      database: 'db_invent',
+      host: process.env.MYSQL_HOST,
+      port: parseInt(process.env.MYSQL_PORT),
+      username: process.env.MYSQL_USERNAME,
+      password: process.env.MYSQL_PASSWORD,
+      database: process.env.MYSQL_DATABASE,
       autoLoadEntities: true,
       synchronize: true, //not use in production
     }),
+    UsersModule, 
     LogisticsCompaniesModule,
     ItemsModule,
     AuthModule,

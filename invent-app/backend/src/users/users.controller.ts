@@ -9,7 +9,6 @@ import { Role } from 'src/common/enums/rol.enum';
 export class UsersController {
   constructor(private readonly usersService: UsersService) { }
 
-  @Auth(Role.SUPERADMIN)
   @Post()
   create(@Body() createUserDto: CreateUserDto) {
     return this.usersService.create(createUserDto);
