@@ -9,8 +9,8 @@ import { MaterialModule } from './material/material.module';
 import { NumberFormatPipe } from './pipe/numberformat.pipe';
 import { PackageTypeComponent } from './pages/package-type/packageType/package-type.component';
 import { LogisticsCompaniesComponent } from './pages/logistics-companies/logistics-companies.component';
-import { ItemsComponent } from './pages/items/items/items.component';
-import { UsersComponent } from './pages/users/users/users.component';
+import { ItemsComponent } from './pages/items/items.component';
+import { UsersComponent } from './pages/users/users.component';
 
 @NgModule({
   declarations: [

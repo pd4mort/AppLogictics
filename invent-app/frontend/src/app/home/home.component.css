@@ -1,0 +1,28 @@
+/* Estilos para el contenedor principal del dashboard */
+.dashboard {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px; /* Espacio entre los paneles */
+  }
+  
+  /* Estilos para los paneles del dashboard */
+  .dashboard-panel {
+    background-color: #f0f0f0; /* Fondo gris claro */
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+  }
+  
+  .dashboard-panel:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  

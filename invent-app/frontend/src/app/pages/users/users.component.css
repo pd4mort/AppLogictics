@@ -1,0 +1,52 @@
+/* Estilos para el título del acordeón de "Usuarios" */
+.accordion-title-users {
+    font-size: 22px;
+    font-weight: bold;
+    color: #673AB7; /* Color personalizado para el título */
+}
+
+/* Estilos para la tarjeta de "Usuarios" */
+.example-card-users {
+    border: 2px solid #673AB7;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+/* Estilos para la tabla de "Usuarios" */
+.mat-elevation-z8.demo-table {
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #fff;
+}
+
+/* Estilos para las celdas de encabezado */
+.mat-header-cell {
+    background-color: #673AB7; /* Color personalizado para las celdas de encabezado */
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Estilos para las celdas de la tabla */
+.mat-cell {
+    padding: 10px;
+    text-align: center;
+}
+
+/* Estilos para las filas de la tabla */
+.mat-header-row {
+    background-color: #512DA8;
+    font-weight: bold;
+}
+
+.mat-row:nth-child(even) {
+    background-color: #D1C4E9;
+}
+
+.mat-row:nth-child(odd) {
+    background-color: #EDE7F6;
+}

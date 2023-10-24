@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { PackageTypeComponent } from './pages/package-type/packageType/package-type.component';
-import { ItemsComponent } from './pages/items/items/items.component';
+import { ItemsComponent } from './pages/items/items.component';
 import { LogisticsCompaniesComponent } from './pages/logistics-companies/logistics-companies.component';
-import { UsersComponent } from './pages/users/users/users.component';
+import { UsersComponent } from './pages/users/users.component';
 
 const routes: Routes = [
   {

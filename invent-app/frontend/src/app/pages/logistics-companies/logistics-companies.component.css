@@ -1,0 +1,50 @@
+/* Estilos para el título del acordeón */
+.accordion-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  /* Estilos para la tarjeta */
+  .custom-card {
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  /* Estilos para la tabla */
+  .custom-table {
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  /* Estilos para las celdas de encabezado */
+  .table-header {
+    background-color: #007BFF;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  /* Estilos para las celdas de la tabla */
+  .table-cell {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  /* Estilos para las filas de la tabla */
+  .table-header-row {
+    background-color: #0056b3;
+    font-weight: bold;
+  }
+  
+  .table-row:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .table-row:nth-child(odd) {
+    background-color: #ffffff;
+  }
+  
