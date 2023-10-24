@@ -14,25 +14,25 @@ export class UsersController {
     return this.usersService.create(createUserDto);
   }
 
-  @Auth(Role.USER)
+  //@Auth(Role.USER)
   @Get()
   findAll() {
     return this.usersService.findAll();
   }
 
-  @Auth(Role.USER)
+  //@Auth(Role.USER)
   @Get(':id')
   findOne(@Param('id') id: number) {
     return this.usersService.findOne(+id);
   }
 
-  @Auth(Role.SUPERADMIN)
+  //@Auth(Role.SUPERADMIN)
   @Patch(':id')
   update(@Param('id') id: number, @Body() updateUserDto: UpdateUserDto) {
     return this.usersService.update(+id, updateUserDto);
   }
 
-  @Auth(Role.SUPERADMIN)
+  //@Auth(Role.SUPERADMIN)
   @Delete(':id')
   remove(@Param('id') id: number) {
     return this.usersService.remove(+id);

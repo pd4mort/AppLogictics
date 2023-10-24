@@ -9,31 +9,31 @@ import { Role } from 'src/common/enums/rol.enum';
 export class ItemsController {
   constructor(private readonly itemsService: ItemsService) {}
 
-  @Auth(Role.USER)
+  //@Auth(Role.USER)
   @Post()
   create(@Body() createItemDto: CreateItemDto) {
     return this.itemsService.create(createItemDto);
   }
 
-  @Auth(Role.USER)
+  //@Auth(Role.USER)
   @Get()
   findAll() {
     return this.itemsService.findAll();
   }
 
-  @Auth(Role.USER)
+  //@Auth(Role.USER)
   @Get(':id')
   findOne(@Param('id') id: number) {
     return this.itemsService.findOne(+id);
   }
 
-  @Auth(Role.ADMIN)
+  //@Auth(Role.ADMIN)
   @Patch(':id')
   update(@Param('id') id: number, @Body() updateItemDto: UpdateItemDto) {
     return this.itemsService.update(+id, updateItemDto);
   }
 
-  @Auth(Role.ADMIN)
+  //@Auth(Role.ADMIN)
   @Delete(':id')
   remove(@Param('id') id: number) {
     return this.itemsService.remove(+id);

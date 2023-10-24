@@ -10,31 +10,31 @@ import { Auth } from 'src/auth/decorators/auth.decorator';
 export class LogisticsCompaniesController {
   constructor(private readonly logisticsCompaniesService: LogisticsCompaniesService) {}
 
-  @Auth(Role.USER)
+  //@Auth(Role.USER)
   @Post()
   create(@Body() createLogisticsCompanyDto: CreateLogisticsCompanyDto) {
     return this.logisticsCompaniesService.create(createLogisticsCompanyDto);
   }
 
-  @Auth(Role.USER)
+  //@Auth(Role.USER)
   @Get()
   findAll() {
     return this.logisticsCompaniesService.findAll();
   }
 
-  @Auth(Role.USER)
+  //@Auth(Role.USER)
   @Get(':id')
   findOne(@Param('id') id: number) {
     return this.logisticsCompaniesService.findOne(+id);
   }
 
-  @Auth(Role.USER)
+  //@Auth(Role.USER)
   @Patch(':id')
   update(@Param('id') id: number, @Body() updateLogisticsCompanyDto: UpdateLogisticsCompanyDto) {
     return this.logisticsCompaniesService.update(+id, updateLogisticsCompanyDto);
   }
 
-  @Auth(Role.USER)
+ // @Auth(Role.USER)
   @Delete(':id')
   remove(@Param('id') id: number) {
     return this.logisticsCompaniesService.remove(+id);
