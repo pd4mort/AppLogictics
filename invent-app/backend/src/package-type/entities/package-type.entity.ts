@@ -9,10 +9,10 @@ export class PackageType {
     @Column()
     typeName: string;
 
-    @Column({ type: 'decimal', precision: 2, scale: 1 })
+    @Column({ type: 'decimal', precision: 3, scale: 1 })
     minWeigt: number
 
-    @Column({ type: 'decimal', precision: 2, scale: 1 })
+    @Column({ type: 'decimal', precision: 3, scale: 1 })
     maxWeigt: number;
     
     @Column()
