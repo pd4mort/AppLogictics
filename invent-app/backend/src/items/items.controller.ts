@@ -29,8 +29,10 @@ export class ItemsController {
 
   //@Auth(Role.ADMIN)
   @Patch(':id')
-  update(@Param('id') id: number, @Body() updateItemDto: UpdateItemDto) {
-    return this.itemsService.update(+id, updateItemDto);
+  async update(@Param('id') id: number, @Body() updateItemDto: UpdateItemDto) {
+    const updateItem = await this.itemsService.update(+id, updateItemDto);
+ 
+    return updateItem;
   }
 
   //@Auth(Role.ADMIN)

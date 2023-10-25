@@ -23,7 +23,6 @@ export class PackageTypeComponent {
     this.http.get('http://localhost:3000/api/v1/package-type').subscribe((data: any) => {
       const packageType = data;
       this.dataSource = new PackageTypeDataSource(packageType);
-      console.log(packageType);
     });
   }
 

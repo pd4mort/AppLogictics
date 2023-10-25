@@ -6,7 +6,7 @@
     <mat-card class="example-card example-card-items">
       <mat-card-content>
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
-          'postalCode', 'destinationName', 'senderName', 
+ 
           <!-- Addres Column -->
           <ng-container matColumnDef="destinationAddress">
             <th mat-header-cell *matHeaderCellDef class="mat-header-cell">Dirección de envío</th>
@@ -27,16 +27,33 @@
             <td mat-cell *matCellDef="let element" class="mat-cell">{{ element.destinationName }}</td>
           </ng-container>
 
-           <!-- Sender Column -->
+          <!-- Sender Column -->
           <ng-container matColumnDef="senderName">
             <th mat-header-cell *matHeaderCellDef class="mat-header-cell">Remitente</th>
             <td mat-cell *matCellDef="let element" class="mat-cell">{{ element.senderName }}</td>
           </ng-container>
 
-           <!-- Weight Column -->
+          <!-- Weight Column -->
           <ng-container matColumnDef="itemWeight">
             <th mat-header-cell *matHeaderCellDef class="mat-header-cell">Peso</th>
-            <td mat-cell *matCellDef="let element" class="mat-cell">{{ element.itemWeight  + ' Kg'}}</td>
+            <td mat-cell *matCellDef="let element" class="mat-cell">{{ element.itemWeight + ' Kg'}}</td>
+          </ng-container>
+
+          <!-- Actions Column -->
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef class="mat-header-cell">
+              <button mat-icon-button (click)="addItem()">
+                <mat-icon fontIcon="add">Añadir</mat-icon>
+              </button>
+            </th>
+            <td mat-cell *matCellDef="let element" class="mat-cell">
+             <!--  <button mat-icon-button (click)="openEditDialog(element)">
+                <mat-icon fontIcon="create">Editar</mat-icon>
+              </button> -->
+              <button mat-icon-button (click)="deleteItem(element)">
+                <mat-icon fontIcon="delete_sweep">Borrar</mat-icon>
+              </button>
+            </td>
           </ng-container>
 
           <tr mat-header-row *matHeaderRowDef="displayedColumns" class="mat-header-row"></tr>

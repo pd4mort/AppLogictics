@@ -11,5 +11,5 @@ export class CreateLogisticsCompanyDto {
     areaCode: number;
 
     @IsString()
-    image: string;
+    image?: string;
 }

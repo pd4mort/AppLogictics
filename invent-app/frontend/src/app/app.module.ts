@@ -11,6 +11,12 @@ import { PackageTypeComponent } from './pages/package-type/packageType/package-t
 import { LogisticsCompaniesComponent } from './pages/logistics-companies/logistics-companies.component';
 import { ItemsComponent } from './pages/items/items.component';
 import { UsersComponent } from './pages/users/users.component';
+import { ItemEditComponent } from './pages/items/item-edit/item-edit.component';
+import { FormsModule } from '@angular/forms';
+import { ItemAddComponent } from './pages/items/item-add/item-add.component';
+import { LogisticsCompaniesEditComponent } from './pages/logistics-companies/logistics-companies-edit/logistics-companies-edit/logistics-companies-edit.component';
+import { LogisticsCompaniesAddComponent } from './pages/logistics-companies/logistics-companies-add/logistics-companies-add/logistics-companies-add.component';
+
 
 @NgModule({
   declarations: [
@@ -21,6 +27,10 @@ import { UsersComponent } from './pages/users/users.component';
     LogisticsCompaniesComponent,
     ItemsComponent,
     UsersComponent,
+    ItemEditComponent,
+    ItemAddComponent,
+    LogisticsCompaniesEditComponent,
+    LogisticsCompaniesAddComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,6 +38,7 @@ import { UsersComponent } from './pages/users/users.component';
     BrowserAnimationsModule,
     HttpClientModule,
     MaterialModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

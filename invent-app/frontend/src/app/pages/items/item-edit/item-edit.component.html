@@ -1,0 +1,18 @@
+<h2>Editar paquete</h2>
+<form>
+
+  <label for="destinationAddress">Dirección de destino:</label>
+  <input id="destinationAddress" [(ngModel)]="editedItem.destinationAddress" name="destinationAddress" type="text" />
+  <label for="postalCode">Código postal:</label>
+  <input id="postalCode" [(ngModel)]="editedItem.postalCode" name="postalCode" type="number" />
+  <label for="destinationName">Destinatario:</label>
+  <input id="destinationName" [(ngModel)]="editedItem.destinationName" name="destinationName" type="text" />
+  <label for="senderName">Remitente:</label>
+  <input id="senderName" [(ngModel)]="editedItem.senderName" name="senderName" type="text" />
+  <label for="itemWeight">Peso:</label>
+  <input id="itemWeight" [(ngModel)]="editedItem.itemWeight" name="itemWeight" type="number" />
+  <div class="button-container">
+    <button mat-raised-button color="primary" (click)="onSave()">Guardar</button>
+    <button mat-raised-button color="warn" (click)="onCancel()">Cancelar</button>
+  </div>
+</form>

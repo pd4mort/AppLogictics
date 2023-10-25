@@ -1,0 +1,15 @@
+<h2>Editar empresa</h2>
+<form>
+
+  <label for="name">Nombre de la empresa:</label>
+  <input id="name" [(ngModel)]="editedComapny.name" name="name" type="text" />
+  <label for="areaCode">Código de zona:</label>
+  <input id="areaCode" [(ngModel)]="editedComapny.areaCode" name="areaCode" type="number" />
+  <label for="image">Logo:</label>
+  <input id="image" [(ngModel)]="editedComapny.image" name="image" type="text" />
+
+  <div class="button-container">
+    <button mat-raised-button color="primary" (click)="onSave()">Guardar</button>
+    <button mat-raised-button color="warn" (click)="onCancel()">Cancelar</button>
+  </div>
+</form>
