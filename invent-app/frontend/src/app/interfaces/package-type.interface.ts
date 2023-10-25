@@ -1,4 +1,4 @@
-export interface PackageType {
+export interface PackageTypeInterface {
     id: number;
     typeName: string;
     minWeigt: number;

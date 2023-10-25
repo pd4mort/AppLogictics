@@ -2,7 +2,7 @@ import { DataSource } from '@angular/cdk/collections';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ReplaySubject, Observable } from 'rxjs';
-import { PackageType } from 'src/app/interfaces/package-type.interface';
+import { UserInterface } from 'src/app/interfaces/user.interface';
 
 @Component({
   selector: 'app-users',
@@ -12,47 +12,35 @@ import { PackageType } from 'src/app/interfaces/package-type.interface';
 export class UsersComponent {
 
   panelOpenState = false;
-  //packageType: PackageType[] = [];
-  displayedColumns: string[] = ['typeName', 'weight', 'form'];
+
+  displayedColumns: string[] = ['name', 'email', 'role'];
   dataSource: any;
 
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    // Realiza una solicitud a tu API aquí
-    this.http.get('http://localhost:3000/api/v1/package-type').subscribe((data: any) => {
-      const packageType = data;
-      this.dataSource = new PackageTypeDataSource(packageType);
-      console.log(packageType);
+    this.http.get('http://localhost:3000/api/v1/users').subscribe((data: any) => {
+      const users = data;
+      this.dataSource = new UserDataSource(users);
     });
   }
-
-
-  addData() {
-    // Lógica para agregar datos aquí
-  }
-
-  removeData() {
-    // Lógica para eliminar datos aquí
-  }
-
 }
 
-class PackageTypeDataSource extends DataSource<PackageType> {
-  private _dataStream = new ReplaySubject<PackageType[]>(1);
+class UserDataSource extends DataSource<UserInterface> {
+  private _dataStream = new ReplaySubject<UserInterface[]>(1);
 
-  constructor(initialData: PackageType[]) {
+  constructor(initialData: UserInterface[]) {
     super();
     this.setData(initialData);
   }
 
-  connect(): Observable<PackageType[]> {
+  connect(): Observable<UserInterface[]> {
     return this._dataStream;
   }
 
   disconnect() {}
 
-  setData(data: PackageType[]) {
+  setData(data: UserInterface[]) {
     this._dataStream.next(data);
   }
 }

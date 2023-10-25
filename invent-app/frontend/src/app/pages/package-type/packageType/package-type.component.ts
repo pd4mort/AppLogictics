@@ -2,7 +2,7 @@ import { DataSource } from '@angular/cdk/collections';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Observable, ReplaySubject } from 'rxjs';
-import { PackageType } from 'src/app/interfaces/package-type.interface';
+import { PackageTypeInterface } from 'src/app/interfaces/package-type.interface';
 
 @Component({
   selector: 'app-package-type',
@@ -38,21 +38,21 @@ export class PackageTypeComponent {
 
 }
 
-class PackageTypeDataSource extends DataSource<PackageType> {
-  private _dataStream = new ReplaySubject<PackageType[]>(1);
+class PackageTypeDataSource extends DataSource<PackageTypeInterface> {
+  private _dataStream = new ReplaySubject<PackageTypeInterface[]>(1);
 
-  constructor(initialData: PackageType[]) {
+  constructor(initialData: PackageTypeInterface[]) {
     super();
     this.setData(initialData);
   }
 
-  connect(): Observable<PackageType[]> {
+  connect(): Observable<PackageTypeInterface[]> {
     return this._dataStream;
   }
 
   disconnect() {}
 
-  setData(data: PackageType[]) {
+  setData(data: PackageTypeInterface[]) {
     this._dataStream.next(data);
   }
 }

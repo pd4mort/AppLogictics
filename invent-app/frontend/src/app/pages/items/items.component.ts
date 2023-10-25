@@ -2,7 +2,7 @@ import { DataSource } from '@angular/cdk/collections';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ReplaySubject, Observable } from 'rxjs';
-import { PackageType } from 'src/app/interfaces/package-type.interface';
+import { ItemInterface } from 'src/app/interfaces/item.interface';
 
 @Component({
   selector: 'app-items',
@@ -10,20 +10,17 @@ import { PackageType } from 'src/app/interfaces/package-type.interface';
   styleUrls: ['./items.component.css']
 })
 export class ItemsComponent {
-
+ 
   panelOpenState = false;
-  //packageType: PackageType[] = [];
-  displayedColumns: string[] = ['typeName', 'weight', 'form'];
+  displayedColumns: string[] = ['destinationAddress', 'postalCode', 'destinationName', 'senderName', 'itemWeight'];
   dataSource: any;
 
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    // Realiza una solicitud a tu API aquí
-    this.http.get('http://localhost:3000/api/v1/package-type').subscribe((data: any) => {
-      const packageType = data;
-      this.dataSource = new PackageTypeDataSource(packageType);
-      console.log(packageType);
+    this.http.get('http://localhost:3000/api/v1/items').subscribe((data: any) => {
+      const item = data;
+      this.dataSource = new ItemDataSource(item);
     });
   }
 
@@ -38,21 +35,21 @@ export class ItemsComponent {
 
 }
 
-class PackageTypeDataSource extends DataSource<PackageType> {
-  private _dataStream = new ReplaySubject<PackageType[]>(1);
+class ItemDataSource extends DataSource<ItemInterface> {
+  private _dataStream = new ReplaySubject<ItemInterface[]>(1);
 
-  constructor(initialData: PackageType[]) {
+  constructor(initialData: ItemInterface[]) {
     super();
     this.setData(initialData);
   }
 
-  connect(): Observable<PackageType[]> {
+  connect(): Observable<ItemInterface[]> {
     return this._dataStream;
   }
 
   disconnect() {}
 
-  setData(data: PackageType[]) {
+  setData(data: ItemInterface[]) {
     this._dataStream.next(data);
   }
 }

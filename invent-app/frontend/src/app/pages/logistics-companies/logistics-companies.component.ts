@@ -1,8 +1,10 @@
 import { DataSource } from '@angular/cdk/collections';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { ReplaySubject, Observable } from 'rxjs';
-import { PackageType } from 'src/app/interfaces/package-type.interface';
+import { LogisticsCompaniesInterface } from 'src/app/interfaces/logistics-companies.interface';
+
 
 @Component({
   selector: 'app-logistics-companies',
@@ -12,19 +14,24 @@ import { PackageType } from 'src/app/interfaces/package-type.interface';
 export class LogisticsCompaniesComponent {
 
   panelOpenState = false;
-  //packageType: PackageType[] = [];
-  displayedColumns: string[] = ['typeName', 'weight', 'form'];
+
+  displayedColumns: string[] = ['name', 'areaCode', 'image'];
   dataSource: any;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private sanitizer: DomSanitizer) {}
 
   ngOnInit(): void {
-    // Realiza una solicitud a tu API aquí
-    this.http.get('http://localhost:3000/api/v1/package-type').subscribe((data: any) => {
-      const packageType = data;
-      this.dataSource = new PackageTypeDataSource(packageType);
-      console.log(packageType);
+
+    this.http.get('http://localhost:3000/api/v1/logistics-companies').subscribe((data: any) => {
+      const logisticsCompanies = data;
+      this.dataSource = new LogisticsCompaniesDataSource(logisticsCompanies);
+
     });
+  }
+
+  getImgHtml(imageUrl: string): SafeHtml {
+    const imgHtml = `<img src="${imageUrl}" alt="Imagen" width="100" height="100">`;
+    return this.sanitizer.bypassSecurityTrustHtml(imgHtml);
   }
 
 
@@ -38,21 +45,21 @@ export class LogisticsCompaniesComponent {
 
 }
 
-class PackageTypeDataSource extends DataSource<PackageType> {
-  private _dataStream = new ReplaySubject<PackageType[]>(1);
+class LogisticsCompaniesDataSource extends DataSource<LogisticsCompaniesInterface> {
+  private _dataStream = new ReplaySubject<LogisticsCompaniesInterface[]>(1);
 
-  constructor(initialData: PackageType[]) {
+  constructor(initialData: LogisticsCompaniesInterface[]) {
     super();
     this.setData(initialData);
   }
 
-  connect(): Observable<PackageType[]> {
+  connect(): Observable<LogisticsCompaniesInterface[]> {
     return this._dataStream;
   }
 
   disconnect() {}
 
-  setData(data: PackageType[]) {
+  setData(data: LogisticsCompaniesInterface[]) {
     this._dataStream.next(data);
   }
 }

@@ -12,6 +12,9 @@ export class LogisticsCompany {
     @Column()
     areaCode: number;
 
+    @Column({ length: 600 })
+    image: string;
+
     @DeleteDateColumn()
     deletedAt: Date;
 }
