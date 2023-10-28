@@ -1,4 +1,4 @@
--- Inserción de datos en la tabla 'item'
+-- Insert table 'item'
 INSERT INTO item (destinationAddress, postalCode, destinationName, senderName, itemWeight, company, price)
 VALUES
   ('Avenida de la avenidad 1', 15012, 'Rodolfo', 'Rufina', 0.1, 'Correos', 0),
@@ -7,7 +7,7 @@ VALUES
   ('Calle montaña', 21012, 'Juani', 'Juan', 8, 'Seur', 123),
   ('Avenida calle', 10012, 'Juancho', 'Antonio', 11, 'INVENT', 148);
 
--- Inserción de datos en la tabla 'logisticsCompany'
+-- Insert table 'logistics_company'
 INSERT INTO logistics_company (name, areaCode, image)
 VALUES
   ('Correos', 15, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbYD4hZtVR_BBzeHYwyX3X1Eg-EsHvzt0ppA&usqp=CAU'),
@@ -22,7 +22,7 @@ VALUES
   ('Seur', 24, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAzolpit5G8QQGUbD4ZNAzB8BvLi13D548Ww&usqp=CAU'),
   ('Seur', 25, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAzolpit5G8QQGUbD4ZNAzB8BvLi13D548Ww&usqp=CAU');
 
--- Inserción de datos en la tabla 'packageType'
+-- Insert table 'package_type'
 INSERT INTO package_type (typeName, minWeight, maxWeight, form)
 VALUES
   ('Paquete ultra ligero', 0, 0.1, 'kg * 5'),
@@ -30,7 +30,7 @@ VALUES
   ('Paquete estándar', 0.3, 5, 'kg * 10'),
   ('Paquete pesado', 5, 10, 'kg * 5 + kg + 75');
 
--- Inserción de datos en la tabla 'user'
+-- Insert table 'user'
 INSERT INTO user (name, email, password, role)
 VALUES
   ('Antonio', 'superadmin@test.es', 123456, 'superadmin'),

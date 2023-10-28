@@ -1,4 +1,4 @@
--- Creación de la tabla 'item'
+-- Create table 'item'
 CREATE TABLE item (
   id INT AUTO_INCREMENT PRIMARY KEY,
   destinationAddress VARCHAR(255),
@@ -10,7 +10,7 @@ CREATE TABLE item (
   price DECIMAL(10, 2)
 );
 
--- Creación de la tabla 'logisticsCompany'
+-- Create table 'logistics_company'
 CREATE TABLE logistics_company (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(255),
@@ -18,7 +18,7 @@ CREATE TABLE logistics_company (
   image VARCHAR(255)
 );
 
--- Creación de la tabla 'packageType'
+-- Create table 'package_type'
 CREATE TABLE package_type (
   id INT AUTO_INCREMENT PRIMARY KEY,
   typeName VARCHAR(255),
@@ -27,7 +27,7 @@ CREATE TABLE package_type (
   form VARCHAR(255)
 );
 
--- Creación de la tabla 'user'
+-- Create table 'user'
 CREATE TABLE user (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(255),
