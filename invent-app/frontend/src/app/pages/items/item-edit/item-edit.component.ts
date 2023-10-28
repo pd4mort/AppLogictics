@@ -37,7 +37,7 @@ export class ItemEditComponent implements OnInit {
     if (this.editedItem) {
       this.http
         .patch<ItemInterface>(
-          `http://localhost:3000/api/v1/items/${this.data.id}`,
+          `http://localhost:3001/api/v1/items/${this.data.id}`,
           this.editedItem
         )
         .subscribe((response: ItemInterface) => {

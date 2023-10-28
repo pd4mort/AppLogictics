@@ -32,7 +32,7 @@ export class LogisticsCompaniesEditComponent {
     if (this.editedComapny) {
       this.http
         .patch<LogisticsCompaniesInterface>(
-          `http://localhost:3000/api/v1/logistics-companies/${this.data.id}`,
+          `http://localhost:3001/api/v1/logistics-companies/${this.data.id}`,
           this.editedComapny
         )
         .subscribe((response: LogisticsCompaniesInterface) => {

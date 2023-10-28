@@ -139,26 +139,26 @@ async function seed() {
 
     const packageType = new PackageType();
     packageType.typeName = 'Paquete ultra ligero';
-    packageType.minWeigt = 0;
-    packageType.maxWeigt = 0.1;
+    packageType.minWeight = 0;
+    packageType.maxWeight = 0.1;
     packageType.form = 'kg * 5';
 
     const packageType2 = new PackageType();
     packageType2.typeName = 'Paquete ligero';
-    packageType2.minWeigt = 0.1;
-    packageType2.maxWeigt = 0.3;
+    packageType2.minWeight = 0.1;
+    packageType2.maxWeight = 0.3;
     packageType2.form = 'kg * 5 + 1';
 
     const packageType3 = new PackageType();
     packageType3.typeName = 'Paquete estándar';
-    packageType3.minWeigt = 0.3;
-    packageType3.maxWeigt = 5;
+    packageType3.minWeight = 0.3;
+    packageType3.maxWeight = 5;
     packageType3.form = 'kg * 10';
 
     const packageType4 = new PackageType();
     packageType4.typeName = 'Paquete pesado';
-    packageType4.minWeigt = 5;
-    packageType4.maxWeigt = 10;
+    packageType4.minWeight = 5;
+    packageType4.maxWeight = 10;
     packageType4.form = 'kg * 5 + kg + 75';
 
     await connection.manager.save(packageType);

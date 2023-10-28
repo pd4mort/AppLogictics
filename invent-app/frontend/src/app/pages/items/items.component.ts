@@ -33,7 +33,7 @@ export class ItemsComponent {
 
   ngOnInit(): void {
     this.http
-      .get('http://localhost:3000/api/v1/items')
+      .get('http://localhost:3001/api/v1/items')
       .subscribe((data: any) => {
         this.items = data;
         this.dataSource = new ItemDataSource(this.items);
@@ -62,7 +62,7 @@ export class ItemsComponent {
     console.log('Borrar', item);
 
     this.http
-      .delete(`http://localhost:3000/api/v1/items/${item.id}`)
+      .delete(`http://localhost:3001/api/v1/items/${item.id}`)
       .subscribe((response) => {
         console.log('Elemento eliminado:', response);
 

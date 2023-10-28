@@ -23,7 +23,7 @@ VALUES
   ('Seur', 25, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAzolpit5G8QQGUbD4ZNAzB8BvLi13D548Ww&usqp=CAU');
 
 -- Inserción de datos en la tabla 'packageType'
-INSERT INTO package_type (typeName, minWeigt, maxWeigt, form)
+INSERT INTO package_type (typeName, minWeight, maxWeight, form)
 VALUES
   ('Paquete ultra ligero', 0, 0.1, 'kg * 5'),
   ('Paquete ligero', 0.1, 0.3, 'kg * 5 + 1'),
@@ -33,7 +33,7 @@ VALUES
 -- Inserción de datos en la tabla 'user'
 INSERT INTO user (name, email, password, role)
 VALUES
-  ('Antonio', 'superadmin@test.es', '123456', 'superadmin'),
-  ('Juan', 'admin@test.es', '123456', 'admin'),
-  ('Antonio', 'user@test.es', '123456', 'user'),
-  ('Prueba', 'test@test.es', '123456', 'user');
+  ('Antonio', 'superadmin@test.es', 123456, 'superadmin'),
+  ('Juan', 'admin@test.es', 123456, 'admin'),
+  ('Antonio', 'user@test.es', 123456, 'user'),
+  ('Prueba', 'test@test.es', 123456, 'user');

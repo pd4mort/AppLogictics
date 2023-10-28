@@ -20,7 +20,7 @@ export class PackageTypeComponent {
 
   ngOnInit(): void {
     // Realiza una solicitud a tu API aquí
-    this.http.get('http://localhost:3000/api/v1/package-type').subscribe((data: any) => {
+    this.http.get('http://localhost:3001/api/v1/package-type').subscribe((data: any) => {
       const packageType = data;
       this.dataSource = new PackageTypeDataSource(packageType);
     });

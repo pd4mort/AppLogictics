@@ -26,7 +26,7 @@ export class LogisticsCompaniesAddComponent {
     console.log(this.newCompany)
     if (this.newCompany) {
       this.http
-        .post<LogisticsCompaniesInterface>(`http://localhost:3000/api/v1/logistics-companies`, this.newCompany)
+        .post<LogisticsCompaniesInterface>(`http://localhost:3001/api/v1/logistics-companies`, this.newCompany)
         .subscribe((response: LogisticsCompaniesInterface) => {
           
           this.dialogRef.close(response);

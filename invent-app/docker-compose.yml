@@ -11,7 +11,7 @@ services:
       MYSQL_PASSWORD: root
     volumes:
       - ./mysql:/var/lib/mysql
-      - ./backend/db-scripts/seed.sql:/docker-entrypoint-initdb.d/seed.sql
+      - ./backend/db-scripts:/docker-entrypoint-initdb.d
     ports:
       - "3307:3306"
 

@@ -19,7 +19,7 @@ export class UsersComponent {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.http.get('http://localhost:3000/api/v1/users').subscribe((data: any) => {
+    this.http.get('http://localhost:3001/api/v1/users').subscribe((data: any) => {
       const users = data;
       this.dataSource = new UserDataSource(users);
     });

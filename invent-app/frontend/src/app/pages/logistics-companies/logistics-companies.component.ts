@@ -26,7 +26,7 @@ export class LogisticsCompaniesComponent {
 
   ngOnInit(): void {
 
-    this.http.get('http://localhost:3000/api/v1/logistics-companies').subscribe((data: any) => {
+    this.http.get('http://localhost:3001/api/v1/logistics-companies').subscribe((data: any) => {
       this.logisticsCompanies = data;
       this.dataSource = new LogisticsCompaniesDataSource(this.logisticsCompanies);
 
@@ -61,7 +61,7 @@ export class LogisticsCompaniesComponent {
     console.log('Borrar', company);
 
     this.http
-      .delete(`http://localhost:3000/api/v1/logistics-companies/${company.id}`)
+      .delete(`http://localhost:3001/api/v1/logistics-companies/${company.id}`)
       .subscribe((response) => {
         console.log('Elemento eliminado:', response);
 

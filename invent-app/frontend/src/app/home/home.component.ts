@@ -23,7 +23,7 @@ export class HomeComponent {
 
   register() {
     const userData = this.user;
-    this.http.post('http://localhost:3000/api/v1/auth/register', userData).subscribe(
+    this.http.post('http://localhost:3001/api/v1/auth/register', userData).subscribe(
       (response) => {
         console.log('Usuario registrado con éxito', response);
       },
@@ -38,7 +38,7 @@ export class HomeComponent {
       email: this.user.email,
       password: this.user.password
     };
-    this.http.post<Token>('http://localhost:3000/api/v1/auth/login', credentials).subscribe(
+    this.http.post<Token>('http://localhost:3001/api/v1/auth/login', credentials).subscribe(
       (response) => {
         console.log('Inicio de sesión exitoso', response);
   

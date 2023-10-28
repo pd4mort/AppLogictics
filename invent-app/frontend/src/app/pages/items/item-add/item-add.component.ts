@@ -34,7 +34,7 @@ export class ItemAddComponent implements OnInit {
       this.selectCompany(this.newItem.postalCode).pipe(
         switchMap(newItem => {
           newItem.price = this.calculatePackagePrice(newItem.itemWeight);
-          return this.http.post<ItemInterface>(`http://localhost:3000/api/v1/items`, newItem);
+          return this.http.post<ItemInterface>(`http://localhost:3001/api/v1/items`, newItem);
         })
       ).subscribe((response: ItemInterface) => {
         this.dialogRef.close(response);
@@ -52,7 +52,7 @@ export class ItemAddComponent implements OnInit {
    * @returns Observable newItem for selectedCompany
    */
   selectCompany(postalCode: number) {
-    return this.http.get('http://localhost:3000/api/v1/logistics-companies').pipe(
+    return this.http.get('http://localhost:3001/api/v1/logistics-companies').pipe(
       switchMap((data: any) => {
         const logisticsCompanies = data as LogisticsCompaniesInterface[];
         const postalCodePrefix = Math.floor(postalCode / 1000);
