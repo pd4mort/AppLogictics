@@ -23,6 +23,8 @@ export class ItemsComponent {
     'destinationName',
     'senderName',
     'itemWeight',
+    'company',
+    'price',
     'actions',
   ];
   dataSource: any;

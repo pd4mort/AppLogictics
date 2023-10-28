@@ -20,6 +20,12 @@ export class Item {
   @Column({ type: 'decimal', precision: 3, scale: 1 })
   itemWeight: number;
 
+  @Column()
+  company: string;
+
+  @Column()
+  price: number;
+
   @DeleteDateColumn({ type: 'timestamp', default: null, nullable: true })
   deletedAt?: Date;
 }

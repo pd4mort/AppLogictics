@@ -5,4 +5,6 @@ export interface ItemInterface {
     destinationName: string;
     senderName: string;
     itemWeight: number;
+    company: string;
+    price: number;
 }
