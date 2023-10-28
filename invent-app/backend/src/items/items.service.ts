@@ -25,8 +25,14 @@ export class ItemsService {
   }
 
   async update(id: number, updateItemDto: UpdateItemDto) {
-    return this.itemRepository.update(id, updateItemDto);
+    const updateResult = await this.itemRepository.update(id, updateItemDto);
+  
+    if (updateResult.affected > 0) {
+      const updatedItem = await this.itemRepository.findOneBy({ id });
+      return updatedItem;
+    } 
   }
+  
 
   async remove(id: number) {
     return await this.itemRepository.softDelete({ id });

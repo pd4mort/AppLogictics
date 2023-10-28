@@ -10,10 +10,10 @@ export class PackageType {
     typeName: string;
 
     @Column({ type: 'decimal', precision: 3, scale: 1 })
-    minWeigt: number
+    minWeight: number
 
     @Column({ type: 'decimal', precision: 3, scale: 1 })
-    maxWeigt: number;
+    maxWeight: number;
     
     @Column()
     form: string;

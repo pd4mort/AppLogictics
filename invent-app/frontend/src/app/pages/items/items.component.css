@@ -1,0 +1,52 @@
+/* Estilos para el título del acordeón de "Compañías de transporte" */
+.accordion-title-items {
+    font-size: 20px;
+    font-weight: bold;
+    color: #E91E63; /* Color personalizado para el título */
+}
+
+/* Estilos para la tarjeta de "Compañías de transporte" */
+.example-card-items {
+    border: 2px solid #E91E63;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+/* Estilos para la tabla de "Compañías de transporte" */
+.mat-elevation-z8.demo-table {
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #fff;
+}
+
+/* Estilos para las celdas de encabezado */
+.mat-header-cell {
+    background-color: #E91E63; /* Color personalizado para las celdas de encabezado */
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Estilos para las celdas de la tabla */
+.mat-cell {
+    padding: 10px;
+    text-align: center;
+}
+
+/* Estilos para las filas de la tabla */
+.mat-header-row {
+    background-color: #D81B60;
+    font-weight: bold;
+}
+
+.mat-row:nth-child(even) {
+    background-color: #F8BBD0;
+}
+
+.mat-row:nth-child(odd) {
+    background-color: #FFCDD2;
+}

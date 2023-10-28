@@ -4,9 +4,12 @@ export class CreateLogisticsCompanyDto {
 
     @IsString()
     @MinLength(2)
-    name: string
+    name: string;
 
     @IsInt()
     @IsPositive()
-    areaCode: number
+    areaCode: number;
+
+    @IsString()
+    image?: string;
 }

@@ -11,5 +11,20 @@ services:
       MYSQL_PASSWORD: root
     volumes:
       - ./mysql:/var/lib/mysql
+      - ./backend/db-scripts:/docker-entrypoint-initdb.d
     ports:
       - "3307:3306"
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./backend:/app   
+    depends_on:
+      - mysql
+    command: ["npm", "start"]
+

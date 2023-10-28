@@ -7,7 +7,13 @@ import { Role } from '../../common/enums/rol.enum';
 export class RolesGuard implements CanActivate {
   constructor(private reflector: Reflector) {}
 
+  /**
+   * This method is executed before a route is accessed.
+   * It checks if the user has the required role specified in the metadata.
+   * @param context The execution context.
+   */
   canActivate(context: ExecutionContext): boolean {
+    // Get the role from the metadata if it's defined
     const role = this.reflector.getAllAndOverride<Role>(ROLES_KEY, [
       context.getHandler(),
       context.getClass(),

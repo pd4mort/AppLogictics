@@ -26,7 +26,12 @@ export class LogisticsCompaniesService {
   }
 
   async update(id: number, updateLogisticsCompanyDto: UpdateLogisticsCompanyDto) {
-    return this.logisticsCompanyRepository.update(id, updateLogisticsCompanyDto);
+    const updateResult = await this.logisticsCompanyRepository.update(id, updateLogisticsCompanyDto);
+  
+    if (updateResult.affected > 0) {
+      const updatedItem = await this.logisticsCompanyRepository.findOneBy({ id });
+      return updatedItem;
+    } 
   }
 
   async remove(id: number) {

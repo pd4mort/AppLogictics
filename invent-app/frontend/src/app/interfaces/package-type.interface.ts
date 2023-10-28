@@ -1,7 +1,7 @@
-export interface PackageType {
+export interface PackageTypeInterface {
     id: number;
     typeName: string;
-    minWeigt: number;
-    maxWeigt: number;
+    minWeight: number;
+    maxWeight: number;
     form: string;
 }

@@ -19,4 +19,10 @@ export class CreateItemDto {
 
     @IsNumber()
     itemWeight: number;
+
+    @IsString()
+    company: string;
+
+    @IsNumber()
+    price: number;
 }

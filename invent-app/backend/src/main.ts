@@ -11,7 +11,7 @@ async function bootstrap() {
    * CORS
    */
   app.enableCors({
-    origin: 'http://localhost:4200', // Reemplaza con el origen de tu aplicación Angular
+    origin: 'http://localhost:4200',
   });
 
   /**
@@ -26,6 +26,6 @@ async function bootstrap() {
   );
 
 
-  await app.listen(3000);
+  await app.listen(3001);
 }
 bootstrap();

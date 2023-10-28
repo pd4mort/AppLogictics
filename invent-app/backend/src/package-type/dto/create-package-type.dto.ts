@@ -6,10 +6,10 @@ export class CreatePackageTypeDto {
     typeName: string;
 
     @IsNumber()
-    minWeigt: number;
+    minWeight: number;
 
     @IsNumber()
-    maxWeigt: number;
+    maxWeight: number;
 
     @IsString()
     form: string;
