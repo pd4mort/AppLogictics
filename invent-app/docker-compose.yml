@@ -13,3 +13,17 @@ services:
       - ./mysql:/var/lib/mysql
     ports:
       - "3307:3306"
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./backend:/app   
+    depends_on:
+      - mysql
+    command: ["npm", "start"]
+
