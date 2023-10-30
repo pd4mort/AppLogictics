@@ -24,6 +24,8 @@ Before proceeding, make sure you have Docker and Node.js installed on your syste
 
  docker-compose up -d
 
+ If have a problem with docker-compose, can navigate to ./backend and run commmand npm i
+
 ## Frontend with ![Angular Logo](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white) and ![TypeScript Logo](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
 ### Inicialice Frontend
@@ -33,6 +35,8 @@ Open your terminal.
 
 Navigate to the ./frontend directory.
 
+Run the command npm i.
+
 Run the command ng serve.
 
 This will start the development server for your Angular application. Make sure you have Angular CLI installed and configured correctly before running this command.
@@ -41,6 +45,8 @@ Frontend will be vailable at http://localhost:4200
 
 ### Comand
 In directory ./frontend 
+
+npm i
 
 ng serve
 
