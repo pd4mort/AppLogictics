@@ -59,5 +59,5 @@ password: 123456
 
 Email: pablodamasor@gmail.com
 
-Linkedin: https://www.linkedin.com/in/pablodamasortega/
+Linkedin: www.linkedin.com/in/pablo-damas-dev-project
 
